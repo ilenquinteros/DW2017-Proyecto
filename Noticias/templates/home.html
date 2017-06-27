@@ -17,7 +17,7 @@
             {% thumbnail noticia.imagen "500x300" crop="center" as im %} 
             <img src="{{im.url}}" alt="" class="img-responsive img-thumbnail">
             {% endthumbnail %}
-            <p><a href="/noticia">{{noticia.titulo_noticia}} </a></p>
+            <p><a href="{% url 'noticia' noticia.id %}">{{noticia.titulo_noticia}} </a></p>
             <p><span class="label label-info">{{noticia.categoria}}</span></p>
         </div>   
         {%endfor%}          

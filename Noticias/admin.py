@@ -5,7 +5,7 @@ from django.contrib import admin
 from Noticias.models import Noticia, Comentario, Lector
 
 class NoticiaAdmin(admin.ModelAdmin):
-    list_display = ('titulo_noticia','contenido','categoria', 'fecha_creacion')
+    list_display = ('titulo_noticia','autor','categoria', 'fecha_creacion')
     search_fields = ('titulo_noticia',)
 
 class LectorAdmin(admin.ModelAdmin):

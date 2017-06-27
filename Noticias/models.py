@@ -6,6 +6,7 @@ from AdminCuentas.models import Categoria, Editor
 
 class Noticia(models.Model):
     titulo_noticia = models.CharField(max_length=100)
+    descripcion = models.TextField()
     contenido = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
     autor = models.ForeignKey(Editor)

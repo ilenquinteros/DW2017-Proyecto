@@ -19,33 +19,14 @@
             </tr>
           </thead>
           <tbody>
+          {% for noticia in object_list %}
             <tr>
-                <td>Desenvolvimento</td>
-                <td>Yrvin Bolsoni</td>
-                <td>Yrvin Bolsoni</td>
+                <td>{{noticia.titulo_noticia}}</td>
+                <td>{{noticia.categoria}}</td>
+                <td>{{noticia.fecha_creacion}}</td>
                 <td><a href="#">Aspx.pdf</a></td> 
             </tr>
-
-            <tr>
-             <td>Desenvolvimento</td>
-                <td>Yrvin Bolsoni</td>
-                <td>Yrvin Bolsoni</td>
-                <td><a href="#">PHP.pdf</a></td>
-            </tr>
-            
-            <tr>    
-                <td>Desenvolvimento</td>
-                <td>Yrvin Bolsoni</td>
-                <td>Yrvin Bolsoni</td>
-                <td><a href="#">Ruby.pdf</a></td> 
-            </tr>
-            
-             <tr>   
-                <td>Desenvolvimento</td>
-                <td>Yrvin Bolsoni</td>
-                <td>Yrvin Bolsoni</td>
-                <td><a href="#">Html.pdf</a></td>
-            </tr>
+          {% endfor %}
           </tbody> 
         </table>
       </div>

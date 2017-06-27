@@ -1,40 +1,65 @@
 {% extends "base.html" %}
 {% load static %}
+{% load thumbnail %}
 
 {% block title %}Noticia{% endblock %}
 {% block content %}
 
 	<section>
 		<div class="container">
+		{% for noticia in object_list.noticiaDetalle %}
 			<div class="row">
 		        <div class="noticiaImg">
-		            <img style="width:100%" src="http://www.limontasport.com/wp-content/uploads/2016/03/limonta-sport-slider-1-2-1800x720.jpg" />
+					{% thumbnail noticia.imagen "1200x450" crop="center" as im %} 
+		            <img style="width:100%" src="{{im.url}}" />
+					{% endthumbnail %}
 		            <div class="profile">
-		                <img class="photo-author img-circle" src="http://www.bordeaux-tourism.co.uk/var/ezwebin_site/storage/images/media/images/regards-bordelais/jean-poutge/profil-jean/12599-2-fre-FR/Profil-Jean_format_360x360.jpg" />
-		                <span class="name-author">por Rubén Garcia</span>
+						{% thumbnail noticia.autor.imagen "70x70" crop="center" as im %} 
+		                <img class="photo-author img-circle" src="{{im.url}}" />
+		                {% endthumbnail %}
+		                <span class="name-author">por {{noticia.autor.nombre}}</span>
 		            </div>
-		            <h5 class="sub-title">DEPORTES</h5>
-		            <h2 class="title">El estadio más impactante del mundo...</h2>
+		            <h2 class="title">{{noticia.titulo_noticia}}</h2>
 
 		        </div>
 		        <!-- INFO -->
 		        <div class="row">
 		            <div class="col-xs-12">
-		            	            <h5 class="">27 de junio, 2017</h5>
-		                <h4 style="line-height: 25px;">Tiene capacidad para 150.000 personas, sorprende a todo el mundo y no es el Santiago Bernabéu del Real Madrid, ni el Old Trafford del Manchester United, ni el Camp Nou del FC Barcelona.</h4>
+		            	<h5 class="">{{noticia.fecha_creacion|date:"d M, Y"}}</h5>
+		            	<h4 style="line-height: 25px;">{{noticia.descripcion}}</h4>
 		            </div>
 		        </div>
 		        <div class="row row-eq-height" style="padding-right:15px">
 		            <div class="col-xs-12 text">
 		               <p>
-		               	 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur soluta maiores expedita neque itaque quidem tempore aspernatur fugit quos, aliquam doloribus distinctio sed, autem voluptate repudiandae voluptatem et, corporis labore.
-		                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempore asperiores sit, tempora perspiciatis ullam accusantium repellat quam et laboriosam nesciunt, optio, dolorem aut, dicta quos nostrum eveniet sapiente maiores!
-		                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, quidem, id. Rerum voluptas delectus harum quidem, molestias ullam facilis, excepturi quaerat iure est accusamus iste labore dignissimos incidunt voluptatibus doloribus.
-		                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur earum, nobis magni ducimus exercitationem, incidunt doloremque vel voluptatibus quae, hic facilis repellat officia quidem voluptatem maxime totam blanditiis perspiciatis nostrum.
+		               	 {{noticia.contenido}}
 		               </p>
 		            </div>
 		            <!-- Sidebar // advertising -->
 		        </div>
+			</div>
+			{% endfor %}
+		</div>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h3>Comentarios</h3>
+				</div><!-- /col-sm-12 -->
+			</div><!-- /row -->
+			<div class="row">
+				{% for comentario in object_list.comentarioDetalle %}
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong>{{comentario.lector.username}}</strong> <span class="text-muted">comentó hace {{comentario.fecha_creacion|timesince}}</span>
+						</div>
+						<div class="panel-body">
+							{{comentario.contenido}}
+						</div><!-- /panel-body -->
+					</div><!-- /panel panel-default -->
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</section>

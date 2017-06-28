@@ -50,7 +50,7 @@
                     {% endfor %}
 
                   </ul>
-                <li><a href="/home">Administrar</a></li>
+                <li><a href="{% url 'editor' %}">Administrar</a></li>
                 <li><a href="/home">Perfil</a></li>
                 <li><a href="#">Inicia sesión</a></li>
                 </li>
@@ -61,18 +61,7 @@
       </div>
     </div>
   </header>
-
-
-
-
-
-	<footer>
-		<div class="container">
-      		<div class="col-md-12">
-        		<p class="text-center">Diario independiente</p>
-      		</div>
-    	</div>
-	</footer>
+{% block content %}{% endblock %}
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

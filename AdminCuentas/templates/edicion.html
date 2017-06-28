@@ -2,15 +2,18 @@
 {% load static %}
 
 
-{% block title %}Edicion categoria{% endblock %}
+{% block title %}Edicion{% endblock %}
 {% block content %}
+<div class="container">
+	<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
 
-<form method="post">
-	{% csrf_token %}
-	{{form.as_p}}
-	<button type="submit">Guardar</button>
+		<button type="submit">Guardar</button>
 	
-</form>
+	</form>
+</div>
+
 
 <!-- <section>
 	<div class="container">

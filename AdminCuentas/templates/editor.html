@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <h2>Noticias</h2>
-        <p class="text-right""><button href="noticia" class="btn btn-primary">Añadir</button></p>
+        <p class="text-right""><a href="{% url 'addNot' %}" class="btn btn-primary">Añadir</a></p>
         <table class="table table-striped table-hover ">
           <thead>
             <tr class="bg-primary">
@@ -25,7 +25,10 @@
                 <td><a href="noticias">{{noticia.titulo_noticia}}</a></td>
                 <td>{{noticia.categoria}}</td>
                 <td>{{noticia.fecha_creacion}}</td>
-                <td><a href="#">Aspx.pdf</a></td> 
+                <td>
+                  <a class="btn btn-primary" href="{% url 'editNot' noticia.id %}">Editar</a>
+                  <a class="btn btn-danger" href="{% url 'delNot' noticia.id %}">Elminar</a>
+                </td> 
             </tr>
           {% endfor %}
           </tbody> 

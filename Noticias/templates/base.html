@@ -51,7 +51,7 @@
 
                   </ul>
                   
-                <li><a href="/home">Administrar</a></li>
+                <li><a href="{% url 'editor' %}">Administrar</a></li>
                 <li><a href="{% url 'home' %}">Perfil</a></li>
                 <li><a href="/edit/login">Inicia sesión</a></li>
                 </li>
@@ -63,13 +63,7 @@
     </div>
   </header>
 {% block content %}{% endblock %}
-	<footer>
-		<div class="container">
-      		<div class="col-md-12">
-        		<p class="text-center">Diario independiente</p>
-      		</div>
-    	</div>
-	</footer>
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

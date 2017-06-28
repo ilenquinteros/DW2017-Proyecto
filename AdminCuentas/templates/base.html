@@ -43,14 +43,14 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Home</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Servicio A</a></li>
-                    <li><a href="#">Servicio B</a></li>
-                    <li><a href="#">Servicio C</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Todos los servicios</a></li>
+                    {% for categoria in categoriasMenu %}
+                    <li><a href="{% url 'categoria' categoria.id %}">{{categoria.nombre_categoria}}</a></li>
+                    {% endfor %}
+
                   </ul>
+                <li><a href="/home">Administrar</a></li>
                 <li><a href="/home">Perfil</a></li>
                 <li><a href="#">Inicia sesión</a></li>
                 </li>
@@ -69,7 +69,7 @@
 	<footer>
 		<div class="container">
       		<div class="col-md-12">
-        		<p class="text-center">Proyecto</p>
+        		<p class="text-center">Diario independiente</p>
       		</div>
     	</div>
 	</footer>

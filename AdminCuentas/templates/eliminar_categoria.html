@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Cuentas{% endblock %}
+{% block content %}
+
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro {{object.nombre_categoria}}?</h3>
+	<button class="btn btn-danger" type="submit">Elminar</button>
+	<button class="btn btn-default" href="{% url 'editor' %}">Cancelar</button>
+</form>
+
+{% endblock %}

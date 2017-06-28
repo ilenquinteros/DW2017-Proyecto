@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Edicion perfil{% endblock %}
+{% block content %}
+
+
+
+<section>
+	<div class="container">
+  		<h2>Perfil</h2>
+  		<p>Ingrese los valores requeridos a continuacion</p>
+  		<form>
+		    <div class="form-group">
+		      <label for="usr">Nombre:</label>
+		      <input type="text" class="form-control" id="usr">
+		    </div>
+		    <div class="form-group">
+		      <label for="pwd">Password:</label>
+		      <input type="password" class="form-control" id="pwd">
+		    </div>
+  		</form>
+	</div>
+</section>
+{% endblock %}

@@ -18,8 +18,7 @@ class categoriasList(ListView):
 	template_name = 'categorias.html'
 	def get_queryset(self):
 		id_categoria = self.kwargs['id_categoria']
-		Noticia.objects.filter(categoria = int(id_categoria)).order_by('-fecha_creacion')
-		return 
+		return Noticia.objects.filter(categoria = int(id_categoria)).order_by('-fecha_creacion')
 
 class homeList (ListView):
 	model = Noticia

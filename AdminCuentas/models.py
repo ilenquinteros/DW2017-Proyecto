@@ -8,7 +8,6 @@ class Admin(models.Model):
 	username = models.CharField(max_length=100)
 	contrasena = models.CharField(max_length=100)
 	email = models.CharField(max_length=100)
-	imagen = models.ImageField(upload_to='images',blank=True,null=True)
 	fecha_creacion = models.DateTimeField(auto_now_add=True)
 	fecha_modificacion = models.DateTimeField(auto_now=True)
 

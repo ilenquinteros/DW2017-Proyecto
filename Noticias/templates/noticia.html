@@ -41,12 +41,17 @@
 			{% endfor %}
 		</div>
 		<hr>
+		
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<h3>Comentarios</h3>
-				</div><!-- /col-sm-12 -->
-			</div><!-- /row -->
+				<form>
+				    <div class="form-group">
+				      <h3>Comentarios</h3>
+				      <textarea placeholder="Deja tu comentario aqui" class="form-control" rows="5" id="comment"></textarea>
+				    </div>
+		  		</form>
+		  		<p class="text-right""><button class="btn btn-primary">Comentar</button></p>
+	  		</div>
 			<div class="row">
 				{% for comentario in object_list.comentarioDetalle %}
 				<div class="col-sm-12">

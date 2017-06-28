@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Edicion categoria{% endblock %}
+{% block content %}
+
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit">Guardar</button>
+	
+</form>
+
+<!-- <section>
+	<div class="container">
+  		<h2>Categoria</h2>
+  		<p>Ingrese los valores requeridos a continuacion</p>
+  		<form>
+		    <div class="form-group">
+		      <label for="usr">Nombre:</label>
+		      <input type="text" class="form-control" id="usr">
+		    </div>
+  		</form>
+  		<div class="container">
+		  <button type="button" class="btn btn-success">Guardar</button>
+		  <button type="button" class="btn btn-danger">Cancelar</button>     
+		</div>
+	</div>
+</section> -->
+{% endblock %}

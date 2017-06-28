@@ -9,8 +9,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-          <h1>Categoria</h1>
+          <h1>Categoría</h1>
           <div class="list-group">
+          {% if object_list %}
           {% for noticia in object_list %}
             <a href="{% url 'noticia' noticia.id %}" class="list-group-item">
               <div class="media col-md-3">
@@ -28,6 +29,9 @@
               </div>
             </a>
             {% endfor %}
+            {% else %}
+            <h2>No hay noticias para la categoría seleccionada</h2>
+            {% endif %}
           </div>
       </div>
       <div class="col-lg-3 visible-lg">

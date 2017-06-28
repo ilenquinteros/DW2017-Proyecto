@@ -22,6 +22,6 @@ import Noticias
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^edit/', include('AdminCuentas.urls')),
+    url(r'^edit/', include('AdminCuentas.urls',)),
     url(r'^', include('Noticias.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

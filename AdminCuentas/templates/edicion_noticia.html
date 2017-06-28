@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Edicion noticia{% endblock %}
+{% block content %}
+
+
+<section>
+	<div class="container">
+  		<h2>Noticia</h2>
+  		<p>Ingrese los valores requeridos a continuacion</p>
+  		<form>
+		    <div class="form-group">
+		      <label for="usr">Nombre:</label>
+		      <input type="text" class="form-control" id="usr">
+		    </div>
+		    <div class="form-group">
+			  <label for="sel1">Categoria:</label>
+			  <select class="form-control" id="sel1">
+			    <option>1</option>
+			    <option>2</option>
+			    <option>3</option>
+			    <option>4</option>
+			  </select>
+			</div>
+		    <div class="form-group">
+  				<label for="comment">Descripción:</label>
+  				<textarea class="form-control" rows="3" id="comment"></textarea>
+			</div>
+			<div class="form-group">
+  				<label for="comment">Contenido:</label>
+  				<textarea class="form-control" rows="5" id="comment"></textarea>
+			</div>		
+  		</form>
+  		<div class="container">
+		  <button type="button" class="btn btn-success">Guardar</button>
+		  <button type="button" class="btn btn-danger">Cancelar</button>     
+		</div>
+	</div>
+</section>
+{% endblock %}
